@@ -3,3 +3,4 @@ pytz~=2022.2.1
 requests~=2.28.1
 instagrapi~=1.16.29
 applescript~=2021.2.9
+Pillow~=9.2.0

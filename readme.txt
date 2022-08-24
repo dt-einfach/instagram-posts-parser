@@ -1,4 +1,18 @@
+УСТАНОВКА:
+
+*. посмотри версию Google Chrome и скачай соответствующий chromedriver (https://chromedriver.chromium.org/downloads) в /usr/local/bin/
+
+*. разреши этот chromedriver использовать, для этого открой терминал в папке /usr/local/bin и введи "xattr -d com.apple.quarantine chromedriver"
+
+*. установи python
+
+*. установи расширения python, для этого открой терминал в папке проекта и введи "pip3 install -r requirements.txt"
+
 *. Заполни файл "config.py" в папке проекта
+
+ВЫПОЛНЕНИЕ:
+
+Чтобы запустить скрипт, открой терминал в папке проекта и введи "python3 script_name.py"
 
 *. Запусти "s1_direct_messages.py". Он скачает сообщения из нужного чата ПМ
 
