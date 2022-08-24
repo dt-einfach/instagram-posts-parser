@@ -33,13 +33,13 @@ for media_pk, post_code in data_to_process['posts_to_save_and_follow'].items():
         )
         already_saved = False
     if not already_saved:
-        print('-- saved')
         tools.load_then_do(lambda: save_button.click(), NoSuchElementException)
+        print('-- saved')
         already_saved = True
 
     follow_button = driver.find_element(By.CSS_SELECTOR, 'div._aar0._ad95._aar1 > div._aar2 > button > div > div')
     if follow_button.text == 'Follow':
-        print('-- followed its author')
         tools.load_then_do(lambda: follow_button.click(), NoSuchElementException)
+        print('-- followed its author')
 
 driver.close()

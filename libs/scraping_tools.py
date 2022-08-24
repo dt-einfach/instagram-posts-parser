@@ -18,7 +18,7 @@ def random_delay():
     return 2 + random() * 18
 
 
-def load_then_do(action, exceptions, attempts=32, print_not_found=True, raise_not_found=True):
+def load_then_do(action, exceptions, attempts=8, print_not_found=True, raise_not_found=True):
     if not hasattr(exceptions, '__iter__'):
         exceptions = (exceptions, )
     for i in range(attempts):
@@ -76,9 +76,10 @@ def get_all_posts_button(driver):
 
 
 def get_posts_space(driver):
-    sel = '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/section' \
-          '/main/div/div/div[3]/article/div/div'
-    return driver.find_element(By.XPATH, sel)
+    sel = 'article'
+    spaces = driver.find_elements(By.CSS_SELECTOR, sel)
+    assert len(spaces) == 1, f"get_posts_space: {len(spaces)} spaces found"
+    return spaces[0]
 
 
 def get_saved_posts(posts_space):

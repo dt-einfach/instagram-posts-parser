@@ -3,10 +3,8 @@ from os.path import isfile
 from time import sleep
 
 from selenium import webdriver
-from selenium.common import NoSuchElementException
 
 from libs import lib
-import libs.scraping_tools as tools
 from libs.local_storage import LocalStorage
 
 driver = webdriver.Chrome()
@@ -31,16 +29,16 @@ with open('./temp/tokens.json', 'w') as w:
         'cookies': driver.get_cookies(),
     }))
 
-for i in range(2):
-    print('looking for "Not now" button...')
-    not_now = tools.load_then_do(
-        lambda: tools.get_not_now_button(driver), NoSuchElementException,
-        attempts=5, print_not_found=False, raise_not_found=False,
-    )
-    if not_now:
-        print('click "Not now"')
-        sleep(tools.random_delay())
-        not_now.click()
-    else:
-        print('no more "Not now" buttons')
-        break
+# for i in range(2):
+#     print('looking for "Not now" button...')
+#     not_now = tools.load_then_do(
+#         lambda: tools.get_not_now_button(driver), NoSuchElementException,
+#         attempts=5, print_not_found=False, raise_not_found=False,
+#     )
+#     if not_now:
+#         print('click "Not now"')
+#         sleep(tools.random_delay())
+#         not_now.click()
+#     else:
+#         print('no more "Not now" buttons')
+#         break
