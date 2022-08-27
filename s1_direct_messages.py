@@ -16,7 +16,7 @@ cl.login(config.login, config.password)
 
 print(f'downloading direct messages for user "{config.pm_name}"...')
 threads = cl.direct_threads(amount=20, selected_filter="", thread_message_limit=1)
-threads = [t for t in threads if not t.users and t.thread_title == config.pm_name]
+threads = [t for t in threads if t.thread_title == config.pm_name]
 assert len(threads) == 1, f"Can't choose a thread from threads: {threads}"
 thread = threads[0]
 messages = cl.direct_messages(thread_id=int(thread.id), amount=50000)

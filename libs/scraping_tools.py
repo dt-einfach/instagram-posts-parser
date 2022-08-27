@@ -1,6 +1,7 @@
 from random import random
 from time import sleep
 
+from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 
 
@@ -29,7 +30,7 @@ def load_then_do(action, exceptions, attempts=8, print_not_found=True, raise_not
             if print_not_found:
                 print(f"~~ {exceptions}: {e}")
     if raise_not_found:
-        raise Exception(f"load_then_do: passed {attempts} attempts")
+        raise NoSuchElementException(f"load_then_do: passed {attempts} attempts")
     else:
         return
 
