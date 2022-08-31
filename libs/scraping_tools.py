@@ -14,9 +14,9 @@ return scrolldown;
 
 def random_delay():
     """
-    :return: random float from 2. to 20.
+    :return: random float from 3. to 25.
     """
-    return 2 + random() * 18
+    return 3 + random() * 22
 
 
 def load_then_do(action, exceptions, attempts=8, print_not_found=True, raise_not_found=True):
