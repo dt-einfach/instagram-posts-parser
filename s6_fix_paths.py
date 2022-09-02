@@ -21,6 +21,6 @@ def mark_files(project_dir, fake_downloads_dir, real_downloads_dir):
 if __name__ == '__main__':
     mark_files(
         'C:\\Users\\David\\PycharmProjects\\instagram-posts-parser',
-        '/Elements/inst/',
-        '/Volumes/Elements/inst/',
+        'D:\\inst',
+        'D:\\inst\\',
     )
